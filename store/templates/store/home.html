@@ -1,0 +1,28 @@
+{% extends 'store/base.html' %}
+
+{% block content %}
+
+<section class="hero">
+    <h1>Dev's Watch Store</h1><br>
+    <p>Premium Watches at Best Price</p>
+</section>
+
+<section class="products">
+
+    {% for product in products %}
+    <div class="product-card">
+        <img src="{{ product.image.url }}">
+        <h3>{{ product.name }}</h3>
+        <p class="price">₹{{ product.price }}</p>
+        
+
+        <a href="https://wa.me/919818868778?text=I want to order {{ product.name }} for ₹{{ product.price }}" target="_blank">
+            <button class="order-btn">Order on WhatsApp</button>
+        </a>
+       
+    </div>
+    {% endfor %}
+
+</section>
+
+{% endblock %}
